@@ -47,11 +47,9 @@ public class Examples_007_HaftaninGunleri {
 					System.out.println("Lütfen belirtilen aralıkta sayı giriniz");
 					break;
 			}
-			
 		} else {
 			System.out.println("Lütfen sıfırdan büyük sayı giriniz");
 		}
-		
 		klavye.close();
 		
 	}
