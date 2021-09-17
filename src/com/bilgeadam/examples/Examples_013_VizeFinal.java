@@ -29,7 +29,6 @@ public class Examples_013_VizeFinal {
 			
 			if (vizeNotu <= 0 || finalNotu <= 0) {
 				System.out.println("Lütfen sıfır veya sıfırdan küçük girmeyiniz");
-				
 			} else {
 				if (ortalama < 50) {
 					System.out.println("ortalamanız: " + ortalama + " Kaldınız");
