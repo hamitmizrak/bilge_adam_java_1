@@ -1,25 +1,14 @@
 
 package com.bilgeadam.examples;
 
-import java.util.Scanner;
-
+// Kullanıcı manuel olarak 5 tane sayı girsin ve bu sayıların ortlamasını bulsun
 public class Examples_008_OrtalamaHesası {
 	
 	public static void main(String[] args) {
-		Scanner klavye = new Scanner(System.in);
-		System.out.println("Lütfen haftanın gününü giriniz");
-		int gun = klavye.nextInt();
-		/*
-		 * 1=pazartesi
-		 * 2=
-		 * 3=
-		 * 4=
-		 * 5=
-		 * 6=
-		 * 7=pazar
-		 */
 		
-		System.out.println("girdiğiniz gün:" + gun);
+		int sayi1 = 1, sayi2 = 2, sayi3 = 3, sayi4 = 4, sayi5 = 5, toplam = 0;
+		toplam = (sayi1 + sayi2 + sayi3 + sayi4 + sayi5) / 5;
+		System.out.println("ortalama: " + toplam);
 		
 	}
 	
