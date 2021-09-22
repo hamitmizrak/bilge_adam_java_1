@@ -1,0 +1,236 @@
+Örnek: 10 kere java yazan metod
+
+public static void Ornek(int a){
+int i;
+    for(i=0;i&lt;a;i++){
+    System.out.println("Java");
+}}
+public static void Main(String[] Args){
+Ornek(10);
+}
+
+////////////////////////////////////////////////////////////
+
+
+Örnek : topla,faktoriyel ve üst alma işlemleri metodu
+            public class Ornekler {
+
+      
+                public static void main(String[] args) {
+System.out.println(topla(10,20));
+System.out.println(faktoriyel(5));
+System.out.println(usAl(1,3));
+
+}
+
+public static int topla(int a,int b)
+{
+int toplam=a+b;
+return toplam;
+}
+public static int faktoriyel(int c)
+{
+int f=1;
+for(int i=1;i&lt;=c;i++)
+{
+f=f*i;
+}
+return f ;
+}
+public static int usAl(int taban,int us)
+{
+int sonuc=1;
+for(int i=1;i&lt;=us;i++)
+sonuc=sonuc*taban;
+return sonuc;
+}
+}
+
+/////////////////////////////////////////////////////////////////////
+
+Örnek:Girilen stringi tersten yazdıran java örneği
+            package ornekler;
+// kelime tersten
+import java.util.Scanner;
+            public class Ornekler {
+
+public static String tersCevir(String kelime){
+ String sonuc="";
+for(int i=kelime.length()-1;i&gt;=0;i--)
+{
+sonuc+=kelime.charAt(i);
+}
+return sonuc;
+}
+
+public static void main(String[] args){
+Scanner scn=new Scanner(System.in);
+System.out.println("kelime gir.");
+String kelime=scn.nextLine();
+System.out.println(tersCevir(kelime));
+}
+}
+
+////////////////////////////////////////////////////////////////////////////
+Örnek: Girilen string’te kaç tane a olduğunu bulan program
+import java.util.Scanner;
+            public class Ornekler {
+public static int atla(String kelime){
+
+char harf='a';
+int adet=0;
+for(int i=0;i&lt;kelime.length();i++)
+{
+if(kelime.charAt(i)==harf){
+adet++;
+}
+}
+return adet;
+
+}
+public static void main(String[] args) {
+System.out.println(atla("aaumitkoseaa"));
+
+}
+
+}
+
+
+/////////////////////////////////////////////////////////////
+Örnek:İçerisinde kaç tane rakam olduğunu bulan program
+            public class Ornekler {
+public static int countDigit(String kelime)
+{
+int sonuc=0;
+for(int i=0;i&lt;kelime.length();i++)
+if(Character.isDigit(kelime.charAt(i)))
+sonuc++;
+return sonuc;
+
+}
+
+public static void main(String[] args){
+System.out.println(countDigit("4yg54wtgq3t"));
+
+}}
+
+//////////////////////////////////////////////////////////////
+
+
+Örnek: İçindeki boşluk sayısı, harf sayısı, tersten yazılışı, kelime sayısını bulan program
+            public class Ornekler {
+public static int harf(String cumle){
+int sonuc=cumle.length();
+for(int i=0;i&lt;cumle.length();i++)
+if(cumle.charAt(i)==' ')
+sonuc--;
+return sonuc;
+}
+public static int cumleS(String cumle){
+int adet=1;
+for(int i=0;i&lt;cumle.length();i++)
+if(cumle.charAt(i)==' ')
+adet++;
+
+return adet;
+}
+public static String ters(String cumle){
+String sonuc="";
+for(int i=cumle.length()-1;i&gt;=0;i--)
+sonuc+=cumle.charAt(i);
+return sonuc;
+}
+public static int sesli(String cumle){
+String sesli="aeıiöouü";
+int adet=0;
+for(int i=0;i&lt;cumle.length();i++)
+if(sesli.indexOf(cumle.charAt(i))&gt;=0)
+adet++;
+return adet;
+
+}
+public static int bosluk(String cumle){
+int adet=0;
+for(int i=0;i&lt;cumle.length();i++)
+if(cumle.charAt(i)==' ')
+adet++;
+return adet;
+}
+public static void main(String[] args) {
+Scanner scn=new Scanner(System.in);
+System.out.println("cumle gir. ");
+String cumle=scn.nextLine();
+System.out.println("harf sayisi: "+harf(cumle));
+System.out.println("kelime sayisi: "+cumleS(cumle));
+System.out.println("tersten: "+ters(cumle));
+System.out.println("sesli sayisi: "+sesli(cumle));
+System.out.println("bosluk sayisi: "+bosluk(cumle));
+
+}
+}
+
+//////////////////////////////////////////////////////////
+
+Örnek : Kelime Tahmin Oyunu {Harf Harf kelimeyi tahmin etmeye çalışın}
+import java.util.Random;
+import java.util.Scanner;
+            public class Ornekler {
+                public static void main(String[] args) {
+
+OyunuBaslat();
+
+}
+
+public static void OyunuBaslat(){
+String[] dizi = {"computer", "program", "java", "ayrık", "matematik"};
+Random rnd = new Random();
+int tutulanIndex = rnd.nextInt(dizi.length);
+
+Scanner scn = new Scanner(System.in);
+String tutulanKelime = dizi[tutulanIndex];
+
+StringBuilder gosterilenKelime = new StringBuilder();
+for(int i=0; i&lt;tutulanKelime.length();i++)
+gosterilenKelime.append("*");
+
+System.out.println(gosterilenKelime);
+//System.out.println(tutulanKelime);
+int yanlisSayisi = 0;
+while(true){
+String tahmin = scn.next();
+if(tutulanKelime.contains(tahmin))//Var ise
+{
+//System.out.println(tutulanKelime.length());
+for(int i=0; i&lt;tutulanKelime.length();i++){
+if(tutulanKelime.charAt(i) == tahmin.charAt(0)){
+gosterilenKelime.setCharAt(i, tahmin.charAt(0));
+//System.out.println(“buldu:”+tutulanKelime);
+}
+}
+}
+else
+yanlisSayisi++;
+System.out.println(gosterilenKelime);
+
+if(!gosterilenKelime.toString().contains("*"))
+break;
+}
+
+System.out.println("Bildiniz…");
+System.out.println("Doğru cevap : " + gosterilenKelime);
+System.out.println("Toplam yanlış tahmin sayısı : " + yanlisSayisi);
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
