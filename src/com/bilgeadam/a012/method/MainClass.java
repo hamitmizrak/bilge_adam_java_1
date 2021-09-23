@@ -1,4 +1,4 @@
-package com.bilgeadam.a012method;
+package com.bilgeadam.a012.method;
 
 public class MainClass {
 	

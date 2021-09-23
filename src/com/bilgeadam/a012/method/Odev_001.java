@@ -1,4 +1,4 @@
-package com.bilgeadam.a012method;
+package com.bilgeadam.a012.method;
 
 public class Odev_001 {
 	public static void main(String[] args) {
