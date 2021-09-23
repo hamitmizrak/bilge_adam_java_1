@@ -7,7 +7,8 @@ public class MainClass {
 		// method.hesapMakinasi();
 		// method.usluSayi();
 		// method.karekokSayi();
-		method.buyuk();
+		// method.buyuk();
+		method.tekCift();
 	}
 	
 }

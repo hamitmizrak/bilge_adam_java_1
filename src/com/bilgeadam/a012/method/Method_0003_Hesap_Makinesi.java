@@ -63,6 +63,7 @@ public class Method_0003_Hesap_Makinesi {
 		System.out.println(Math.sqrt(sayi1));
 	}
 	
+	// sayı 1
 	public int sayi1() {
 		int sayi1;
 		Scanner klavye = new Scanner(System.in);
@@ -71,6 +72,7 @@ public class Method_0003_Hesap_Makinesi {
 		return sayi1;
 	}
 	
+	// sayı 2
 	public int sayi2() {
 		int sayi1;
 		Scanner klavye = new Scanner(System.in);
@@ -79,6 +81,7 @@ public class Method_0003_Hesap_Makinesi {
 		return sayi1;
 	}
 	
+	// 2 sayı arasıdaki en büyüğü bulan
 	public void buyuk() {
 		int sayi1 = sayi1();
 		int sayi2 = sayi2();
@@ -88,7 +91,29 @@ public class Method_0003_Hesap_Makinesi {
 		} else {
 			System.out.println(sayi1 + " küçüktür");
 		}
+	}
+	
+	// 2 sayı arasıdaki en küçüğü bulan
+	public void kucuk() {
+		int sayi1 = sayi1();
+		int sayi2 = sayi2();
 		
+		if (sayi1 < sayi2) {
+			System.out.println(sayi1 + " küçüktür");
+		} else {
+			System.out.println(sayi1 + " büyüktür");
+		}
+	}
+	
+	// çift sayı tek sayı
+	public void tekCift() {
+		int sayi1 = sayi1();
+		if (sayi1 % 2 == 0) {
+			System.out.println("çift sayıdır");
+		} else {
+			System.out.println("Sayı tektir");
+			
+		}
 	}
 	
 }
