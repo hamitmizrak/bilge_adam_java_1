@@ -2,6 +2,13 @@ package com.bilgeadam.a012.method;
 
 import java.util.Scanner;
 
+// manuel compiler
+// GitHub clone
+// static
+// StringBuilder StringBuffer
+// method parametre
+// method örneklere devam
+
 // 1-)kullanıcı tarafından kelimeyi girilecek metot yazalım ?
 // 2-) kelimeyi tersten yazıdan algoritma
 // Bilge
@@ -79,7 +86,6 @@ public class Method_0004_Password {
 				continue;
 			else
 				temp += i;
-			
 		}
 		return temp;
 	}
@@ -115,5 +121,7 @@ public class Method_0004_Password {
 		// StringBuffer arqasındaki farklar nelerdir ?
 		// synchronized nedir ?
 		
+		// manuel compiler
+		// gitHub clone ?
 	}
 }
