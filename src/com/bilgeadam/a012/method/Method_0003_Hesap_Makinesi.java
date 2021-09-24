@@ -22,6 +22,7 @@ import java.util.Scanner;
 // ödev-11 kullanıcı tarafından girilen bir sayının asal olup olmadığını bulan
 // ödev-12 kullanıcı tarafından girilen bir sayının yatay atış örneği bulan
 // ödev-12 kullanıcı tarafından girilen bir sayının basamak sayıları bulan alg?
+// 145
 // ödev-13 1-10 arasındaki fibonacci sayıları bulan örnek algoritma
 // ödev-14 kullanıcı tarafından girilen bir sayının armstrong olup olmadığını
 // bulan örnek algoritma
@@ -114,6 +115,66 @@ public class Method_0003_Hesap_Makinesi {
 			System.out.println("Sayı tektir");
 			
 		}
+	}
+	
+	// Kullanıcı tarafından girilen kelimenin içindeki a harflerini sayan algoritma
+	// 1-) dış dünyada bir şeyler gönderecek miyim ?
+	// 2-) dış dünyadan metoda birşeyler geliyor mu ?
+	
+	// abc
+	public String scannerVocabulary() {
+		Scanner klavye = new Scanner(System.in);
+		System.out.println("Lütfen bir kelime giriniz");
+		String kelime = klavye.nextLine();
+		return kelime;
+	}
+	
+	public void vowelLetter(String cemil) {
+		int count = 0;
+		for (int i = 0; i < cemil.length(); i++) {
+			if (cemil.charAt(i) == 'a') {
+				count++;
+			}
+		}
+		
+		System.out.println("a sayısı: " + count);
+	}
+	// Java By pass value mi ? java by pass referances mi dir?
+	// örneklerini vererek açıklayalım ?
+	
+	// Köklerini bulan aolgoritma f(x) diskriminant örneği ?
+	
+	// kullanıcının girmiş olduğu a,b,c ve x için Fonksiyon hesaplaması yapa
+	// f(x)=ax^2+bx+c Math ?
+	// f(x) diskriminant örneği ?
+	
+	public static void functionExam(int a, int b, int c, int x) {
+		double result = a * Math.pow(x, 2) + b * x + c;
+		System.out.println(result);
+	}
+	
+	public static void main(String[] args) {
+		// Method_0003_Hesap_Makinesi makinesi = new Method_0003_Hesap_Makinesi();
+		// String klavye = makinesi.scannerVocabulary();
+		// makinesi.vowelLetter(klavye);
+		
+		int a, b, c, x;
+		Scanner klavye = new Scanner(System.in);
+		
+		System.out.println("Lütfen a sayısını giriniz");
+		a = klavye.nextInt();
+		
+		System.out.println("Lütfen b sayısını giriniz");
+		b = klavye.nextInt();
+		
+		System.out.println("Lütfen c sayısını giriniz");
+		c = klavye.nextInt();
+		
+		System.out.println("Lütfen x sayısını giriniz");
+		x = klavye.nextInt();
+		
+		functionExam(a, b, c, x);
+		
 	}
 	
 }

@@ -117,11 +117,12 @@ public class Method_0004_Password {
 		String value5 = builder.toString();
 		System.out.println("4.birleşirme:" + value5);
 		
-		// StringBuilder
-		// StringBuffer arqasındaki farklar nelerdir ?
-		// synchronized nedir ?
+		// 5-) birleştirme StringBuffer çok tane veriyi biribirine eklemek için
+		// kullanıyoruz.
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(value1).append(value2);
+		String value6 = buffer.toString();
+		System.out.println("5.birleşirme:" + value6);
 		
-		// manuel compiler
-		// gitHub clone ?
 	}
 }
