@@ -18,7 +18,7 @@ public class RandomTuto {
 		// Class düzeyinde ==> OOP daha yakındır.
 		// java.util
 		Random rastgeleClass = new Random();
-		// 1<=X<=4
+		// 1<=X<=9
 		int rastgeleSayi2 = rastgeleClass.nextInt(9) + 1;
 		System.out.println(rastgeleSayi2);
 		
