@@ -153,28 +153,29 @@ public class Method_0003_Hesap_Makinesi {
 		System.out.println(result);
 	}
 	
-	public static void main(String[] args) {
-		// Method_0003_Hesap_Makinesi makinesi = new Method_0003_Hesap_Makinesi();
-		// String klavye = makinesi.scannerVocabulary();
-		// makinesi.vowelLetter(klavye);
-		
-		int a, b, c, x;
+	public static int sayi11() {
 		Scanner klavye = new Scanner(System.in);
-		
-		System.out.println("Lütfen a sayısını giriniz");
-		a = klavye.nextInt();
-		
-		System.out.println("Lütfen b sayısını giriniz");
-		b = klavye.nextInt();
-		
-		System.out.println("Lütfen c sayısını giriniz");
-		c = klavye.nextInt();
-		
-		System.out.println("Lütfen x sayısını giriniz");
-		x = klavye.nextInt();
-		
-		functionExam(a, b, c, x);
-		
+		System.out.println("sayıyı giriniz");
+		int value = klavye.nextInt();
+		return value;
+	}
+	
+	public static void sukru() {
+		int a = sayi11();
+		int b = sayi11();
+		int c = sayi11();
+		int x = sayi11();
+		System.out.println(functionExam2(a, b, c, x));
+	}
+	
+	public static double functionExam2(int a, int b, int c, int x) {
+		double result = a * Math.pow(x, 2) + b * x + c;
+		return result;
+	}
+	
+	// 15 ekim
+	public static void main(String[] args) {
+		sukru();
 	}
 	
 }
