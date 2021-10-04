@@ -29,7 +29,7 @@ public class Array_Examples_4 {
 		Scanner klavye = new Scanner(System.in);
 		String tekSayi;
 		char klavyeChar;
-		int cevrilmisChar;
+		int cevrilmisChar = 0;
 		// BAUtils
 		
 		// döngüyü kullanıcı tek sayı ve simge girmeyene kadar döngü devam etsin
@@ -40,48 +40,48 @@ public class Array_Examples_4 {
 			// isDigit için String to char
 			klavyeChar = tekSayi.charAt(0);
 			
+			Random rastgele = new Random();
+			
 			// cast ==> String to int
 			if ((Character.isDigit(klavyeChar))) {
 				cevrilmisChar = Integer.parseInt(tekSayi);
+				if ((Character.isDigit(klavyeChar)) && (cevrilmisChar % 2 == 1)) {
+					int bas, orta, son;
+					
+					// kullanıcı tek sayı girdiği yer örneğin: 5 elemanlı sayı
+					int[] dizi = new int[cevrilmisChar];
+					
+					// 1 6 9 3 2 5 7
+					
+					for (int i = 0; i < cevrilmisChar; i++) {
+						// 1 ile kullanıcının girdiği sayıya kadar üst indis olacak
+						int sayi = rastgele.nextInt(cevrilmisChar) + 1;
+						dizi[i] = sayi;
+					}
+					
+					// 1 2 3 5 6 7
+					Arrays.sort(dizi);
+					
+					// forEach
+					for (int temp : dizi) {
+						System.out.print(temp + " ");
+					}
+					
+					bas = dizi[0];
+					son = dizi[dizi.length - 1];
+					// (soneleman+ilkeleman)/2
+					orta = dizi[(dizi[dizi.length - 1] + dizi[0]) / 2];
+					System.out.println("\nbaş: " + bas + " orta: " + orta + " son: " + son);
+					int[] value = { bas, orta, son };
+					startArray(value);
+					break;
+				} else {
+					System.out.println("\nÇift sayı girdiniz Tek sayı girmediniz. ");
+				}
 			} else {
 				System.out.println("Lütfen simge girmeyiniz");
 			}
 			
-			Random rastgele = new Random();
-			
-			if ((Character.isDigit(klavyeChar)) && (cevrilmisChar % 2 == 1)) {
-				int bas, orta, son;
-				
-				// kullanıcı tek sayı girdiği yer örneğin: 5 elemanlı sayı
-				int[] dizi = new int[cevrilmisChar];
-				
-				// 1 6 9 3 2 5 7
-				
-				for (int i = 0; i < cevrilmisChar; i++) {
-					// 1 ile kullanıcının girdiği sayıya kadar üst indis olacak
-					int sayi = rastgele.nextInt(cevrilmisChar) + 1;
-					dizi[i] = sayi;
-				}
-				
-				// 1 2 3 5 6 7
-				Arrays.sort(dizi);
-				
-				// forEach
-				for (int temp : dizi) {
-					System.out.print(temp + " ");
-				}
-				
-				bas = dizi[0];
-				son = dizi[dizi.length - 1];
-				// (soneleman+ilkeleman)/2
-				orta = dizi[(dizi[dizi.length - 1] + dizi[0]) / 2];
-				System.out.println("baş: " + bas + " orta: " + orta + " son: " + son);
-				int[] value = { bas, orta, son };
-				startArray(value);
-				break;
-			} else {
-				System.out.println("\nSayı girmediniz veya Tek sayı girmediniz. ");
-			}
 		}
 		
 	}
@@ -123,7 +123,6 @@ public class Array_Examples_4 {
 			}
 			System.out.println();
 		}
-		
 	}
 	
 	public static void main(String[] args) {
