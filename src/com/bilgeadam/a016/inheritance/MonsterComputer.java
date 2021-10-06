@@ -9,5 +9,16 @@ public class MonsterComputer extends Computer {
 	public void deneme() {
 		super.deneme();
 		System.out.println("Monster computer");
+		// HHLT
+		// HashTable
+		// HashMap =
+		// LinkedHashMap = eklediğinin sırada
+		// TreeMAp=Küçükten büyüğe
+		
+		// inheritance
+		// abstract
+		// interface
+		// enum
+		
 	}
 }

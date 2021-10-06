@@ -7,6 +7,7 @@ package com.bilgeadam.a016.inheritance;
 public class Computer {
 	
 	// özellikler
+	// encapsulation
 	private String computerName = "";
 	private String computerSerialNumber = "";
 	private String computerMainCart = "";
@@ -16,6 +17,7 @@ public class Computer {
 		
 	}
 	
+	//
 	// parametreli constructor
 	// Shift+Alt+S
 	public Computer(String computerName, String computerSerialNumber, String computerMainCart) {
@@ -23,6 +25,9 @@ public class Computer {
 		this.computerSerialNumber = computerSerialNumber;
 		this.computerMainCart = computerMainCart;
 	}
+	
+	// Overloading
+	// @Override
 	
 	// toString
 	// Shift+Alt+S

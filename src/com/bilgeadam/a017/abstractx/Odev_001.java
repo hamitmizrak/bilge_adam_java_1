@@ -1,4 +1,4 @@
-package com.bilgeadam.a017.abstarct;
+package com.bilgeadam.a017.abstractx;
 
 public class Odev_001 {
 	public static void main(String[] args) {
