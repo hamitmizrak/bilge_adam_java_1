@@ -7,6 +7,7 @@ public class StaticValue {
 	// Atm projesi
 	
 	// 0-) login user="root" password="root" 5 hak verilecek bloke koyacağız.
+	// 0-) para görüntüle
 	// 1-) Para yatıracağız (eğer paramız 0 ise para eklememiz zorlasın)
 	// 2-) Para çekeceğim
 	// 3-) Havale yapacağım (3 tane hesap No ) :
@@ -17,6 +18,7 @@ public class StaticValue {
 	// inheritance
 	// abstract
 	// interface
+	
 	// enum
 	// static
 	// String metotları
