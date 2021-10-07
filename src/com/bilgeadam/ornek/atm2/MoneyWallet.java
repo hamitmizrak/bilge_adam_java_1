@@ -54,52 +54,63 @@ public class MoneyWallet extends CommonProperty implements IBankMethods {
 		return chooice;
 	}
 	
+	public boolean isLogin() {
+		boolean result = true;
+		return result;
+	}
+	
 	public void allMethod() {
-		// composition
-		// 1
-		Bank bank = new Bank("1", "Halkbank", "İstanbul", "Logo4");
-		
-		// N
-		MoneyWallet moneyWallet = new MoneyWallet("2", "kağıt", MoneyCurrency.TR.name(), 25000.0);
-		moneyWallet.setBank(bank);
-		moneyWallet.getBank().getMoneyList().add(moneyWallet);
-		
-		String key = scannerValue();
-		switch (key) {
-			case "1": {
-				showMoney();
-				break;
-			}
-			case "2": {
-				addMoney(14000.0);
-				break;
-			}
-			case "3": {
-				reduceMoney(3000.0);
-				break;
-			}
-			case "4": {
-				sendEftMoney(1000.0);
-				break;
-			}
-			case "5": {
-				sendHavaleMoney(500.0);
-				break;
-			}
-			case "6": {
-				fakeMail("mailadresiniz@gmail.com");
-				break;
-			}
+		boolean res = isLogin();
+		if (res) {
 			
-			case "7": {
-				System.out.println("Çıkış yapılıyor");
-				System.exit(0);
-				break;
-			}
-			default:
-				System.out.println("Lütfen belirtilen sayıyı giriniz");
-				break;
+			// composition
+			// 1
+			Bank bank = new Bank("1", "Halkbank", "İstanbul", "Logo4");
 			
+			// N
+			MoneyWallet moneyWallet = new MoneyWallet("2", "kağıt", MoneyCurrency.TR.name(), 25000.0);
+			moneyWallet.setBank(bank);
+			moneyWallet.getBank().getMoneyList().add(moneyWallet);
+			
+			String key = scannerValue();
+			switch (key) {
+				case "1": {
+					showMoney();
+					break;
+				}
+				case "2": {
+					addMoney(14000.0);
+					break;
+				}
+				case "3": {
+					reduceMoney(3000.0);
+					break;
+				}
+				case "4": {
+					sendEftMoney(1000.0);
+					break;
+				}
+				case "5": {
+					sendHavaleMoney(500.0);
+					break;
+				}
+				case "6": {
+					fakeMail("mailadresiniz@gmail.com");
+					break;
+				}
+				
+				case "7": {
+					System.out.println("Çıkış yapılıyor");
+					System.exit(0);
+					break;
+				}
+				default:
+					System.out.println("Lütfen belirtilen sayıyı giriniz");
+					break;
+				
+			}
+		} else {
+			System.out.println("Lütfen Giriş yapınız");
 		}
 		
 	}
