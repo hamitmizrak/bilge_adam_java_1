@@ -29,7 +29,6 @@ public class MoneyWallet extends CommonProperty implements IBankMethods {
 	// interface: farklı ortak özellikler
 	
 	// Parametreli constructor
-	
 	public MoneyWallet(String id, String moneyType, String moneyCurrency, double moneyAmount) {
 		super(id);
 		this.moneyType = moneyType;
@@ -49,56 +48,105 @@ public class MoneyWallet extends CommonProperty implements IBankMethods {
 		Scanner klavye = new Scanner(System.in);
 		System.out.println("Lütfen seçim yapınız");
 		System.out.println(
-				"1-)Para Görüntüle\n2-)Para Yatır\n3-)Para Çekme\n4-)Eft Göndermek\n5-)Havale gönder\n6-)Mail gönder\7-)Çıkış");
+				"1-)Para Görüntüle\n2-)Para Yatır\n3-)Para Çekme\n4-)Eft Göndermek\n5-)Havale gönder\n6-)Mail gönder\n7-)Çıkış");
 		String chooice = klavye.nextLine();
 		return chooice;
 	}
 	
 	public boolean isLogin() {
-		boolean result = true;
+		boolean result = false;
+		
+		Scanner klavye = new Scanner(System.in);
+		String userEmail = "", userPassword = "", maskString = "";
+		
+		// static veri çağırdım Ctrl+Mouse left click
+		String dbUser = UtilAtm.USER_DEFAULT;
+		String dbPassword = UtilAtm.USER_PASSWORD;
+		
+		// hakkınız:4
+		int attempt = 4;
+		
+		while (attempt >= -1) {
+			System.out.println("\nLütfen Kullanıcı adı giriniz");
+			userEmail = klavye.nextLine().trim();
+			System.out.println("\nLütfen Kullanıcı şifrenizi giriniz");
+			userPassword = klavye.nextLine().trim();
+			
+			for (int i = 0; i < userPassword.length(); i++) {
+				maskString = maskString + "*";
+			}
+			System.out.println("Maskelenemiş şifre:" + maskString);
+			
+			if ((userEmail.equals(dbUser)) && (userPassword.equals(dbPassword))) {
+				result = true;
+				System.out.println("doğru cevap");
+				allMethod();
+				break;
+			} else {
+				System.out.println("Email veya şifre yanlış girdiniz");
+				System.out.println("kalan hakkınız: " + (attempt - 1));
+				
+				if (attempt == 1) {
+					System.out.println(
+							"4 kere yanlış hakkımız kartınız bloke oldu müşteri hizmetlerini arayınız 444 555 99622");
+					// System.exit(0);
+					break;
+				}
+				attempt--;
+			}
+		}
+		
 		return result;
 	}
 	
 	public void allMethod() {
-		boolean res = isLogin();
-		if (res) {
-			
-			// composition
-			// 1
-			Bank bank = new Bank("1", "Halkbank", "İstanbul", "Logo4");
-			
-			// N
-			MoneyWallet moneyWallet = new MoneyWallet("2", "kağıt", MoneyCurrency.TR.name(), 25000.0);
-			moneyWallet.setBank(bank);
-			moneyWallet.getBank().getMoneyList().add(moneyWallet);
-			
+		Scanner klavye = new Scanner(System.in);
+		// composition
+		// 1
+		Bank bank = new Bank("1", "Halkbank", "İstanbul", "Logo4");
+		// bank.setMoneyList(new ArrayList<MoneyWallet>());
+		
+		// N
+		MoneyWallet moneyWallet = new MoneyWallet("2", "kağıt", MoneyCurrency.TR.name(), 25000.0);
+		moneyWallet.setBank(bank);
+		moneyWallet.getBank().getMoneyList().add(moneyWallet);
+		
+		while (true) {
 			String key = scannerValue();
 			switch (key) {
 				case "1": {
+					System.out.println("Toplam para");
 					showMoney();
 					break;
 				}
 				case "2": {
-					addMoney(14000.0);
+					System.out.println("Para ekleme");
+					addMoney();
 					break;
 				}
 				case "3": {
-					reduceMoney(3000.0);
+					System.out.println("Para çekme");
+					reduceMoney();
 					break;
 				}
 				case "4": {
-					sendEftMoney(1000.0);
+					System.out.println("\nEft işlemi");
+					double eft = klavye.nextDouble();
+					sendEftMoney();
 					break;
 				}
 				case "5": {
-					sendHavaleMoney(500.0);
+					System.out.println("\nHavale işlemi");
+					double havale = klavye.nextDouble();
+					sendHavaleMoney();
 					break;
 				}
 				case "6": {
-					fakeMail("mailadresiniz@gmail.com");
+					System.out.println("\nMail adresinizi giriniz");
+					String email = klavye.nextLine();
+					fakeMail(email);
 					break;
 				}
-				
 				case "7": {
 					System.out.println("Çıkış yapılıyor");
 					System.exit(0);
@@ -107,49 +155,53 @@ public class MoneyWallet extends CommonProperty implements IBankMethods {
 				default:
 					System.out.println("Lütfen belirtilen sayıyı giriniz");
 					break;
-				
 			}
-		} else {
-			System.out.println("Lütfen Giriş yapınız");
 		}
-		
+	}
+	
+	public double moneyAmount() {
+		Scanner klavye = new Scanner(System.in);
+		System.out.println("miktarı giriniz");
+		moneyAmount = klavye.nextDouble();
+		return moneyAmount;
 	}
 	
 	// interface içini dolduracağım metotlar
 	@Override
-	public void addMoney(double money) {
+	public void addMoney() {
+		double money = moneyAmount();
 		this.moneyAmount += money;
+		System.out.println("Para Miktarı: " + getMoneyAmount());
+	}
+	
+	@Override
+	public void reduceMoney() {
+		
+		double money = moneyAmount();
+		this.moneyAmount -= money;
+		System.out.println("Para Miktarı: " + getMoneyAmount());
 		
 	}
 	
 	@Override
-	public void reduceMoney(double money) {
-		//
-		if (moneyAmount > 0) {
-			this.moneyAmount -= money;
-		} else {
-			System.out.println("Bakiyeniz 0 TL");
-		}
-		
-	}
-	
-	@Override
-	public void sendHavaleMoney(double money) {
+	public void sendHavaleMoney() {
 		Bank bank = new Bank();
 		for (Object temp : bank.bankHavaleSerial) {
 			System.out.println(temp);
 		}
-		moneyAmount = moneyAmount - money;
+		moneyAmount = moneyAmount - moneyAmount();
+		System.out.println("Para Miktarı: " + getMoneyAmount());
 	}
 	
 	@Override
-	public void sendEftMoney(double money) {
+	public void sendEftMoney() {
 		Bank bank = new Bank();
 		for (Object temp : bank.bankEftSerial) {
 			System.out.println(temp);
 		}
-		System.out.println(money + "kadar Eft gönderildi");
-		moneyAmount = moneyAmount - money;
+		System.out.println(moneyAmount() + "kadar Eft gönderildi");
+		moneyAmount = moneyAmount - moneyAmount();
+		System.out.println("Para Miktarı: " + getMoneyAmount());
 		
 	}
 	
@@ -161,7 +213,7 @@ public class MoneyWallet extends CommonProperty implements IBankMethods {
 	
 	@Override
 	public void showMoney() {
-		System.out.println("paranız toplam tutarı: " + this.moneyAmount);
+		System.out.println("paranız toplam tutarı: " + getMoneyAmount());
 	}
 	
 	// Getter and setter

@@ -6,6 +6,7 @@ import com.bilgeadam.util.SabitVeri;
 
 public class StringExamplses_002 {
 	public static void main(String[] args) {
+		
 		Scanner klavye = new Scanner(System.in);
 		String userEmail = "", userPassword = "", maskString = "";
 		

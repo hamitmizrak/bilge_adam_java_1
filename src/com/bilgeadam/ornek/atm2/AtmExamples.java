@@ -2,6 +2,7 @@ package com.bilgeadam.ornek.atm2;
 // Atm projesi
 
 // 0-) login user="root" password="root" 5 hak verilecek bloke koyacağız.
+
 // 0-) para görüntüle
 // 1-) Para yatıracağız (eğer paramız 0 ise para eklememiz zorlasın)
 // 2-) Para çekeceğim

@@ -11,6 +11,7 @@ import java.util.List;
 // Getter and setter
 
 // 1
+
 public class Bank extends CommonProperty {
 	// özellikler
 	protected String bankName;
@@ -29,7 +30,11 @@ public class Bank extends CommonProperty {
 	protected List<MoneyWallet> moneyList;
 	
 	// Parametresiz constructor
+	// Null Pointer Exception
 	public Bank() {
+		// Null Pointer Exception
+		moneyList = new ArrayList<MoneyWallet>();
+		
 		// fake information
 		bankHavaleSerial = new ArrayList<Havale>();
 		bankHavaleSerial.add(new Havale("1", "havale1 seri140", "5000"));
@@ -50,6 +55,20 @@ public class Bank extends CommonProperty {
 		this.bankName = bankName;
 		this.bankCityName = bankCityName;
 		this.bankLogo = bankLogo;
+		
+		moneyList = new ArrayList<MoneyWallet>();
+		
+		bankHavaleSerial = new ArrayList<Havale>();
+		bankHavaleSerial.add(new Havale("1", "havale1 seri140", "5000"));
+		bankHavaleSerial.add(new Havale("2", "havale2 seri150", "6000"));
+		bankHavaleSerial.add(new Havale("3", "havale3 seri160", "7000"));
+		bankHavaleSerial.add(new Havale("4", "havale4 seri170", "8000"));
+		
+		bankEftSerial = new ArrayList<Eft>();
+		bankEftSerial.add(new Eft("1", "eft1 seri141", "2000"));
+		bankEftSerial.add(new Eft("2", "eft2 seri142", "3000"));
+		bankEftSerial.add(new Eft("3", "eft3 seri143", "4000"));
+		bankEftSerial.add(new Eft("4", "eft4 seri144", "5000"));
 	}
 	
 	// toString
@@ -105,6 +124,7 @@ public class Bank extends CommonProperty {
 	}
 	
 	public void setMoneyList(List<MoneyWallet> moneyList) {
+		
 		this.moneyList = moneyList;
 	}
 	
