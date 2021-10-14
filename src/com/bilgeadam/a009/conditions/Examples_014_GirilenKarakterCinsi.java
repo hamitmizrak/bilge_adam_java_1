@@ -13,14 +13,6 @@ public class Examples_014_GirilenKarakterCinsi {
 			String simge;
 			simge = klavye.nextLine();
 			char karakter = simge.charAt(0);
-			String uzunluk = "abc451 ";
-			System.out.println(uzunluk.length());
-			
-			// char karakter = 'a';
-			{
-				{
-				}
-			}
 			
 			if (Character.isDigit(karakter)) {
 				System.out.println("Bu bir sayıdır");
