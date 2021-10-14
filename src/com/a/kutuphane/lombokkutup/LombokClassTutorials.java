@@ -19,11 +19,12 @@ public class LombokClassTutorials {
 	private String sehir;
 	private String tarih;
 	
-	// Avm avm=new Avm("İstanbul Avm,"asd");
-	// avm
+	// lombok
+	// file
+	// composition
+	// association
 	
-	// Store store=new Store("asd","sdfsdf","sdfsdf");
-	
-	//
+	// gitignore
+	// stream()
 	
 }
