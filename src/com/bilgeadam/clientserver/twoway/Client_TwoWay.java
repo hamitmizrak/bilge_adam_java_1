@@ -14,7 +14,6 @@ import java.util.Date;
 
 // client: veri almak hemde veri göndermek
 public class Client_TwoWay {
-	
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		String receiveMessage; // mesaj almak
 		String sendMessage;// mesaj göndermek
