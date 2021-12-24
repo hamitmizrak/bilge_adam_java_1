@@ -46,7 +46,7 @@ public class RecursiveMethodTutorials {
 		}
 	}
 	
-	// verielen iki sayı arasındaki toplamını yapan recursive method
+	//
 	public static int araToplam(int start, int end) {
 		if (end > start) {
 			return end + araToplam(start, end - 1);

@@ -10,16 +10,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
 
-// server: gelen istediði yerine getirir
+// server: gelen istediï¿½i yerine getirir
 public class Server_TwoWay {
 	
 	public static void main(String[] args) throws IOException {
 		String receiveMessage; // mesaj almak
-		String sendMessage;// mesaj göndermek
+		String sendMessage;// mesaj gï¿½ndermek
 		
 		ServerSocket serverSocket = new ServerSocket(StaticPort.PORT);
 		
-		System.out.println("Server hazýr...");
+		System.out.println("Server hazir ...");
 		Socket socket = serverSocket.accept();
 		
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

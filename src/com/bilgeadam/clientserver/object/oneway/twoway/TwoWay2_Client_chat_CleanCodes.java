@@ -10,11 +10,11 @@ import java.net.Socket;
 public class TwoWay2_Client_chat_CleanCodes {
 	public static void main(String[] args) throws Exception {
 		
-		try() {
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		// try() {
+		//
+		// } catch (Exception e) {
+		// // TODO: handle exception
+		// }
 		
 		Socket socket = new Socket("127.0.0.1", 3000);
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -25,8 +25,8 @@ public class TwoWay2_Client_chat_CleanCodes {
 		InputStream inputStream = socket.getInputStream();
 		BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(inputStream));
 		
-		System.out.println("Client : Lütfen mesaj yazýnýz");
-		// receiveMessage:mesaj almak sendMessage:mesaj gönder
+		System.out.println("Client : Lï¿½tfen mesaj yazï¿½nï¿½z");
+		// receiveMessage:mesaj almak sendMessage:mesaj gï¿½nder
 		String receiveMessage, sendMessage;
 		while (true) {
 			sendMessage = bufferedReader.readLine(); // keyboard reading

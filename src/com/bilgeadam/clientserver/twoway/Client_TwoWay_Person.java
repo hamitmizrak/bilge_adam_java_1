@@ -10,20 +10,18 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.List;
 
-// client: veri almak hemde veri göndermek
+// client: veri almak hemde veri gï¿½ndermek
 public class Client_TwoWay_Person {
 	
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		String receiveMessage; // mesaj almak
-		String sendMessage;// mesaj göndermek
+		String sendMessage;// mesaj gï¿½ndermek
 		
-		// port açýlýmý yapýyoruz.
+		// port aï¿½ï¿½lï¿½mï¿½ yapï¿½yoruz.
 		Socket socket = new Socket("localhost", StaticPort.PORT);
 		
-		// Client veri gönderecek
+		// Client veri gï¿½nderecek
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		OutputStream outputStream = socket.getOutputStream();
 		PrintWriter printWriter = new PrintWriter(outputStream, true);
@@ -31,12 +29,12 @@ public class Client_TwoWay_Person {
 		// serverdan gelen veriyi almak
 		InputStream inputStream = socket.getInputStream();
 		BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(inputStream));
-		System.out.println("Client: lütfen mesaj yazýnýz");
+		System.out.println("Client: lutfen mesaj yaziniz");
 		
-		List<PersonList> listem = new ArrayList<PersonList>();
+		// List<PersonList> listem = new ArrayList<PersonList>();
 		
 		while (true) {
-			// clienttan veri alýmý
+			// clienttan veri alï¿½mï¿½
 			sendMessage = bufferedReader.readLine();
 			printWriter.println(sendMessage);
 			printWriter.flush(); // tazelenmek

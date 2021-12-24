@@ -7,26 +7,26 @@ import java.util.Arrays;
 // Stream()
 // Method referances ::
 public class WhatISStream {
-	// Stream() Akýþtýr
-	// kodlarýmýzý daha az yazmak çok uðraþmamaktýr
-	// IO: InputStream() OuttputStream() ile Stream() karýþtýrmayýn
+	// Stream() Akistir.
+	// kodlarimizi daha az yazmak ï¿½ok uï¿½raï¿½mamaktï¿½r
+	// IO: InputStream() OuttputStream() ile Stream() karistirmayin
 	
 	public static void iterativeArray() {
-		String[] dizi = { "Malatya", "Sivas", "Edirne", "Maraþ" };
+		String[] dizi = { "Malatya", "Sivas", "Edirne", "Maraï¿½" };
 		for (int i = 0; i < dizi.length; i++) {
 			System.out.print(dizi[i] + " ");
 		}
 	}
 	
-	// Stream ancak collectiondan kulanýyoruz bunun için diziyi liste çevirmemiz
-	// lazým
+	// Stream ancak collectiondan kulaniyoruz bunun icin diziyi liste cevirmemiz
+	// lazim
 	public static void streamArray() {
-		String[] dizi = { "Malatya", "Sivas", "Edirne", "Maraþ" };
+		String[] dizi = { "Malatya", "Sivas", "Edirne", "Maraï¿½" };
 		Arrays.asList(dizi).stream().forEach(System.out::print);
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Ýterative For");
+		System.out.println("iterative For");
 		iterativeArray();
 		System.out.println("\n********************************");
 		System.out.println("Stream For");

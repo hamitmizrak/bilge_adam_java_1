@@ -4,42 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// stream(): akısın basladigi yerdir
-// sorted(): sıralama
+// stream(): akisin basladigi yerdir
+// sorted(): siralama
 // collect(): muhurluyor
 // forEach(): Ekrana listeli gostermek
-// filter(): verilerden istediklerimi almak kullanıyoruz
+// filter(): verilerden istediklerimi almak kullaniyoruz
 
-// filterde Lmabda expression kullanıyoruz.
+// filterde Lmabda expression kullaniyoruz.
 // () = parametre
-// -> ok yönü
+// -> ok yini
 // {}
 
-// Java 10 var değişkeni
+// Java 10 var deiiikeni
 
-// map: her bir elemanı teker teker dolaşarak işlem yapar
+// map: her bir elemani teker teker dolaiarak iilem yapar
 
 public class _4_map {
 	
-	// Student bir classım olsun datasetlerimiz ekliyelim
-	// Verilerin içeriğinde H ile başalayan kaç tane Hamit
+	// Student bir classim olsun datasetlerimiz ekliyelim
+	// Verilerin iieriiinde H ile baialayan kai tane Hamit
 	// olan verilerden sadece 3 tanesini bana versin
 	public static void main(String[] args) {
 		List<Student> listem = new ArrayList<Student>();
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit", "Mızrak"));
-		listem.add(new Student("Hamit1", "Mızrak"));
-		listem.add(new Student("Hamit2", "Mızrak"));
-		listem.add(new Student("Hamit3", "Mızrak"));
-		listem.add(new Student("Hamit4", "Mızrak"));
-		listem.add(new Student("Hamit5", "Mızrak"));
-		listem.add(new Student("Hamit4", "Mızrak"));
-		listem.add(new Student("Hamit4", "Mızrak"));
-		listem.add(new Student("Hamit4", "Mızrak"));
+		listem.add(new Student("Hamit", "Mizrak"));
+		listem.add(new Student("Hamit", "Mizrak"));
+		listem.add(new Student("Hamit", "Mizrak"));
+		listem.add(new Student("Hamit1", "Mizrak"));
+		listem.add(new Student("Hamit2", "Mizrak"));
+		listem.add(new Student("Hamit3", "Mizrak"));
+		listem.add(new Student("Hamit4", "Mizrak"));
 		
 		List<String> listem2 = listem.stream().map(Student::getAdi).filter(tp -> tp.startsWith("Hamit")).limit(55)
 				.collect(Collectors.toList());
